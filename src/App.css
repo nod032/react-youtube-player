@@ -40,3 +40,15 @@
 .read-the-docs {
   color: #888;
 }
+
+
+nav {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.active {
+  font-weight: bold;
+  color: red;
+}
