@@ -1,18 +1,29 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const VideoPlayer = ({ videoId }) => {
+const PlayerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+`;
+
+const VideoTitle = styled.h2`
+  font-size: 24px;
+  margin-bottom: 15px;
+`;
+
+const VideoPlayer = ({ video }) => {
   return (
-    <div>
-      <iframe
-        width="100%"
-        height="360"
-        src={`https://www.youtube.com/embed/${videoId}`}
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      />
-    </div>
+    <PlayerContainer>
+      <VideoTitle>{video.title}</VideoTitle>
+      <video controls width="100%">
+        <source src={video.videoUrl} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <p>{video.description}</p>
+    </PlayerContainer>
   );
 };
 

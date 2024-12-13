@@ -34,13 +34,12 @@ const Title = styled.h3`
 `;
 
 const VideoCard = ({ video, onClick }) => {
-  const { title, description, thumbnailUrl } = video;
+  const { title, thumbnailUrl } = video;
   
   return (
     <CardContainer onClick={onClick}>
       <VideoThumbnail src={thumbnailUrl} alt={title} />
       <Title>{title}</Title>
-      <p>{description}</p>
     </CardContainer>
   );
 };
